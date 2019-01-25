@@ -1,0 +1,9 @@
+
+*.swp
+*.swo
+*.log
+node_modules
+.idea/
+.idea
+.idea/workspace.xml
+.env

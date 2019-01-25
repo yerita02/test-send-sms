@@ -1,0 +1,76 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "version": "2.0",
+    "icon": "images/jb-icon.png",
+    "iconSmall": "images/jb-icon.png"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "ENVIO SMS",
+      "description": "Envio de SMS"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments":[
+        { "id": "{{Event.APIEvent-58fb1793-3b7e-954f-930e-196f6b34f74b.Id}}"},
+        { "name": "{{Event.APIEvent-58fb1793-3b7e-954f-930e-196f6b34f74b.Nombre}}"}
+      ],
+      "outArguments": [
+        { "exitoso":"boolean" }
+      ],
+      "url": "https://test-send-sms.herokuapp.com/ixn/activities/portalweb/execute/",
+      "verb": "POST",
+      "body": "",
+      "header": "",
+      "format": "json",
+      "useJwt": false,
+      "timeout": 10000
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "e4bc0109-a511-468b-8c85-104b285cfd94",
+    "defaults": { "priority": "4"},
+    "save": {
+      "url": "https://test-send-sms.herokuapp.com/ixn/activities/portalweb/save/",
+      "body": "",
+      "verb": "POST",
+      "useJwt": false
+    },
+    "publish": {
+      "url": "https://test-send-sms.herokuapp.com/ixn/activities/portalweb/publish/",
+      "verb": "POST",
+      "body": "",
+      "useJwt": false
+    },
+    "validate": {
+      "url": "https://test-send-sms.herokuapp.com/ixn/activities/portalweb/validate/",
+      "verb": "POST",
+      "body": "",
+      "useJwt": false
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "outArguments": [
+          {
+            "key": {
+              "dataType": "Text",
+              "isNullable": false,
+              "access": "Visible",
+              "direction": "Out"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "edit": {
+    "url": "https://test-send-sms.herokuapp.com/ixn/activities/portalweb/",
+    "height": 400,
+    "width": 500
+  }
+}
